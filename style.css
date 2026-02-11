@@ -15,7 +15,19 @@ a{
 
 /*========================================= Navbar
 Responsable: Frejuce ===================================================*/
-
+.navbar{background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+}
+.logo{
+    color:#555;
+   font-size: large;
+ font-family: Arial, sans-serif ;
+}
 /*************Header / Hero*********/
 .hero{
     /******Image de fond (remplace par ton URL)****/
