@@ -1,0 +1,26 @@
+/***************globalité******/
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    /***la taille des polices en REM**/
+    font-size: 1rem;
+}
+nav-links{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*========================================= Navbar
+Responsable: Frejuce ===================================================*/
+
+/*===================================================== Header / Hero
+Responsable:  Modeste ===================================*/
+
+/*==================================== Menu Pop - Up 
+Responsable: Frejuce ===============================================================*/
+
+/*========================================= Responsive / Media queries 
+Responsable: Modeste =======================================================*/
