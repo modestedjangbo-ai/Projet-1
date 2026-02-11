@@ -16,11 +16,56 @@ a{
 /*========================================= Navbar
 Responsable: Frejuce ===================================================*/
 
-/*===================================================== Header / Hero
-Responsable:  Modeste ===================================*/
+/*************Header / Hero*********/
+.hero{
+    /******Image de fond (remplace par ton URL)****/
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 
-/*==================================== Menu Pop - Up 
-Responsable: Frejuce ===============================================================*/
+    /******Proportions demandées**/
+    height: 98vh;
+}
 
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/******Bouttons Call-to-action****/
+.cta-buttons .btn {
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: translate(-3px);
+    opacity: 0.9;
+}
 /*========================================= Responsive / Media queries 
 Responsable: Modeste =======================================================*/
