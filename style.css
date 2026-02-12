@@ -72,13 +72,17 @@
     justify-content: center;
     text-align: center;
     color: white;
-    /******Proportions desktop: 98vh********/
+    /****** Style général desktop: 98vh********/
     height: 98vh;   
     }
 
 .hero-content h1 {
     font-size: 3.5rem;
+    /**** Taille initiale*****/
     margin-bottom: 1rem;
+    /******* Gardé sur mobile***/
+    color: white;
+    /****** Gardé sur mobile***/
 }
 
 .hero-content p {
@@ -113,15 +117,32 @@
 }
 /*****************Responsive / Media queries**************/
 @media ( max-width: 768px) {
-    .nav-links {
-        display: none;
+    .navbar{
+        flex-direction: column;
+        /**** Le logo au-dessus, le menu en-dessous****/
+        padding: 10px;
     }
-    /******* on cache le menu pour simplifier en mobile****/
+
+    .nav-links {
+        display: flex;
+    /******* on les réaffiche ****/
+    flex-wrap: wrap;
+    /******* Elles reviennent à la ligne si pas assez de place*****/
+    justify-content: center;
+    margin-top: 10px;}
+
+    .nav-links li {
+        margin: 5px 10px;
+        /**** un peu d'espace entre chaque icone*****/
+    }
+
     .hero {
         /****** Proportion mobile: 100vh****/
         height: 100vh;
     }
+
     .hero-content h1 {
         font-size: 2.2rem;
+        /**** On ne change pas que la taille ici***/
     }
 }
