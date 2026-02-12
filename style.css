@@ -124,16 +124,24 @@
     }
 
     .nav-links {
-        display: flex;
-    /******* on les réaffiche ****/
-    flex-wrap: wrap;
-    /******* Elles reviennent à la ligne si pas assez de place*****/
-    justify-content: center;
-    margin-top: 10px;}
+        display: grid;
+    /******* on passe en grille****/
+    grid-template-columns: 1fr 1fr;
+    /*** on crée 2 colonnes égales***/
+    gap: 15px;
+    /***Un espace régulier entre chaque élément***/
+    margin-top: 15px;
+    width: 100%;
+    padding: 0 10px;
+    }
 
     .nav-links li {
-        margin: 5px 10px;
-        /**** un peu d'espace entre chaque icone*****/
+        margin: 0;
+        /****On remplace le 5px 10px par 0*****/
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        /***Aligne le texte au début de sa case***/
     }
 
     .hero {
