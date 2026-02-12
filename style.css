@@ -4,34 +4,67 @@
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     /***la taille des polices en REM**/
-    font-size: 1rem;
+    font-size:1rem;
+    box-sizing: border-box;
 }
-nav-links{
-    list-style: none;
-}
-a{
-    text-decoration: none;
+/*********************Navbar*********************/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
-/*========================================= Navbar
-Responsable: Frejuce ===================================================*/
-.navbar{background: white;
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    
+.nav-links{
+    list-style: none;
+    display: flex;
 }
-.logo{
-    color:#555;
-   font-size: large;
- font-family: Arial, sans-serif ;
+
+.nav-links li{
+    margin-left: 20px;
 }
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: #ff6b6b;
+}
+
+/******** Style spécifique pour les icones dans le menu******/
+.nav-links a i{
+    margin-right: 8px;
+
+    /******* Crée l'espace entre l'icone et ton texte*****/
+    color: #ff6b6b;
+
+    /********* Donne la meme couleur que le hover pour rappel*****/
+    font-size: 0.85rem;
+
+    /********* Ajuste la taille pour que ce soit harmonieux*****/
+    transition: 0.3s;
+}
+
+/************* Effet au survol: l'icone peut aussi changer*****/
+.nav-links a:hover i {
+    transform: scale(1.2);
+    /******** L'icone grossit légèrement au survol*****/
+}
+
+
 /*************Header / Hero*********/
 .hero{
-    /******Image de fond (remplace par ton URL)****/
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1350&q=80');
+    /******Image de fond********/
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://media.istockphoto.com/id/1390005458/photo/interior-of-a-modern-cozy-italian-restaurant.jpg?s=2048x2048&w=is&k=20&c=uKM0WHp6mb-rrhwYsKFp6MwNS_L7t-0-B8q8kYsmOkA=);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -39,10 +72,9 @@ Responsable: Frejuce ===================================================*/
     justify-content: center;
     text-align: center;
     color: white;
-
-    /******Proportions demandées**/
-    height: 98vh;
-}
+    /******Proportions desktop: 98vh********/
+    height: 98vh;   
+    }
 
 .hero-content h1 {
     font-size: 3.5rem;
