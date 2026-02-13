@@ -115,42 +115,41 @@
     transform: translate(-3px);
     opacity: 0.9;
 }
-/*****************Responsive / Media queries**************/
+/***************** Responsive / Media queries **************/
 @media ( max-width: 768px) {
     .navbar{
         flex-direction: column;
-        /**** Le logo au-dessus, le menu en-dessous****/
+        /**** Le logo au-dessus, le menu en-dessous ****/
         padding: 10px;
     }
 
     .nav-links {
         display: grid;
-    /******* on passe en grille****/
+    /******* On remplace flex par grid pour créer des cases ****/
     grid-template-columns: 1fr 1fr;
-    /*** on crée 2 colonnes égales***/
-    gap: 15px;
-    /***Un espace régulier entre chaque élément***/
+    /*** On force 2 colonnes égales ***/
+    gap: 10px;
+    /*** Espace régulier entre les icones ***/
     margin-top: 15px;
     width: 100%;
-    padding: 0 10px;
     }
 
     .nav-links li {
-        margin: 0;
-        /****On remplace le 5px 10px par 0*****/
         list-style: none;
-        display: flex;
-        justify-content: start;
-        /***Aligne le texte au début de sa case***/
+        margin: 0;
+        /**** On enlève les marges qui créaient le désordre *****/
+        font-size: 0.75rem;
+        /**** On réduit pour que "TEMOIGNAGES CLIENT" tienne ***/ 
     }
 
     .hero {
         /****** Proportion mobile: 100vh****/
         height: 100vh;
+        /*** La proportion demandée pour le mobile ***/
     }
 
     .hero-content h1 {
-        font-size: 2.2rem;
-        /**** On ne change pas que la taille ici***/
+        font-size: 1.8rem;
+        /**** Plus petit pour ne pas etre écrasé par le menu ***/
     }
 }
