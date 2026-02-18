@@ -64,7 +64,7 @@
 /*************Header / Hero*********/
 .hero{
     /******Image de fond********/
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://media.istockphoto.com/id/1390005458/photo/interior-of-a-modern-cozy-italian-restaurant.jpg?s=2048x2048&w=is&k=20&c=uKM0WHp6mb-rrhwYsKFp6MwNS_L7t-0-B8q8kYsmOkA=);
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -72,14 +72,21 @@
     justify-content: center;
     text-align: center;
     color: white;
+    padding: 20px;
     /****** Style général desktop: 98vh********/
     height: 98vh;   
     }
 
+    /*contenu */
+    .hero-content {
+        max-width: 800px;
+        animation: fadein 1.5s ease-in-out;
+    }
+
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.rem;
     /**** Taille initiale*****/
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
     /******* Gardé sur mobile***/
     color: white;
     /****** Gardé sur mobile***/
@@ -87,33 +94,46 @@
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
 }
 
 /******Bouttons Call-to-action****/
-.cta-buttons .btn {
+/*Bouton */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    margin: 0 10px;
-    display: inline-block;
     transition: 0.3s;
 }
 
+/*Bouton principal */
 .btn-primary {
-    background-color: #ff6b6b;
+    background-color: #ff7a00;
     color: white;
 }
+.btn-primary:hover{
+    background-color: #e66900;
+    transform: scale(1.05);
+}
 
+/*Bouton secondaire */
 .btn-secondary {
+    background-color: transparent;
     border: 2px solid white;
     color: white;
 }
 
-.btn:hover {
-    transform: translate(-3px);
-    opacity: 0.9;
+.btn-secondary:hover {
+   background-color: white;
+   color: black;
 }
 /***************** Responsive / Media queries **************/
 @media ( max-width: 768px) {
