@@ -13,26 +13,114 @@
         <div class="logo">Le Bonheur</div>
 
         <ul class="nav-links">
-            <li><a href="accueil"><i class="fa-solid fa-house"></i>ACCUEIL</a></li>
-            <li><a href="menu (Livre)" id="popup-menu"><i class="fa-solid fa-book-open"></i>NOTRE MENU</a></li>
-            <li><a href="offres (Cadeau/Tag)"><i class="fa-solid fa-gift"></i>OFFRES SPECIALES</a></li>
-            <li><a href="reservation (Calendrier)"><i class="fa-solid fa-calendar-days"></i>RESERVATION</a></li>
-            <li><a href="galerie (Images)"><i class="fa-solid fa-image"></i>GALERIE</a></li>
-            <li><a href="temoignages (Bulles)"><i class="fa-solid fa-comments"></i>TEMOIGNAGES CLIENT</a></li>
-            <li><a href="contact (Enveloppe)"><i class="fa-solid fa-envelope"></i>CONTACT</a></li>
-        </ul>
+  <li><a href="#home">ACCUEIL</a></li>
+  <li><a href="#menu">NOTRE MENU</a></li>
+  <li><a href="#offres">OFFRES SPECIALES</a></li>
+  <li><a href="#reservation">RESERVATION</a></li>
+  <li><a href="#galerie">GALERIE</a></li>
+  <li><a href="#temoignages">TEMOIGNAGES</a></li>
+  <li><a href="#contact">CONTACT</a></li>
+</ul>
     </nav>
 
     <!--partie de header-->
-    <header class="hero">
+    <header class="hero" id="home">
         <div class="hero-content">
             <h1>Le Royaume des Saveurs locaux</h1>
             <p>Une expérience culinaire inoubliable au coeur de la ville.</p>
             <div class="cta-buttons">
-                <a href="#reseverunetable" class="btn btn-primary">Réserver une table</a>
-                <a href="#passercommande" class="btn btn-secondary">Passer commande</a>
+                <a href="reseverunetable" class="btn btn-primary">Réserver une table</a>
+                <a href="passercommande" class="btn btn-secondary">Passer commande</a>
             </div>
         </div>
     </header>
+
+    <!-- SECTION MENU -->
+<section class="menu-section" id="menu">
+    <h2>Nos Plats Phares</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="">
+            <h3>Yassa Poulet</h3>
+            <p>Un délicieux poulet mariné au citron et aux oignons.</p>
+            <span>5000 FCFA</span>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="">
+            <h3>Double Burger</h3>
+            <p>Burger gourmand avec double steak et fromage fondant.</p>
+            <span>6000 FCFA</span>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="">
+            <h3>Riz au poisson</h3>
+            <p>Spécialité locale riche en saveurs traditionnelles.</p>
+            <span>3000 FCFA</span>
+        </div>
+
+    </div>
+
+    <button class="menu-popup-btn" onclick="openPopup()">Voir Boissons & Desserts</button>
+</section>
+
+<!-- SECTION GALERIE -->
+<section class="gallery" id="galerie">
+    <h2>Notre Galerie</h2>
+    <div class="gallery-container">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" alt="">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="">
+        <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269" alt="">
+    </div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Boissons & Desserts</h2>
+        <ul>
+            <li>Mojito - 2000 FCFA</li>
+            <li>Smoothie Ananas - 2000 FCFA</li>
+            <li>Tiramisu - 2000 FCFA</li>
+            <li>Mousse au chocolat - 2000 FCFA</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+function openPopup(){
+    document.getElementById("popup").style.display="flex";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
+<!-- SECTION OFFRES -->
+<section id="offres">
+  <h2>Offres spéciales</h2>
+</section>
+
+<!-- SECTION RESERVATION -->
+<section id="reservation">
+  <h2>Réservation</h2>
+</section>
+
+<!-- SECTION TEMOIGNAGES -->
+<section id="temoignages">
+  <h2>Témoignages clients</h2>
+</section>
+
+<!-- SECTION CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+</section>
 </body>
 </html>
