@@ -111,6 +111,44 @@ function closePopup(){
 <!-- SECTION RESERVATION -->
 <section id="reservation">
   <h2>Réservation</h2>
+  <div class="gauche">
+    <form action="#" method="post">
+        <!--- Coordonnées Clients-->
+        <fieldset>
+            <legend>Vos Coordonnées</legend>
+
+                <label for="name">Nom complet</label>
+                <input type="text" name="name" id="name" placeholder="name" required="required"> <br>
+            
+                <label for="tel">Téléphone</label>
+                <input type="tel" name="tel" id="tel" placeholder="tel" required="required"> <br>
+
+                <label for="mail">Email</label>
+                <input type="email" name="mail" id="mail" placeholder="votre email"  required="required"> <br>
+        
+        </fieldset>
+
+        <!-- Infos Réservation-->
+         <fieldset>
+            <legend>Détails de la Réservation</legend>
+
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date"> <br>
+
+                <label for="time">Heure</label>
+                <input type="time" name="time" id="time"> <br>
+            
+                <label for="number">Nombre de personnes</label>
+                <input type="number" name="number" id="number" min="1"> <br>
+
+                <label for="message">Message</label>
+                <textarea name="message" id="message">Votre message</textarea> <br>
+            
+         </fieldset>
+         
+         <input type="submit" value="Confirmer la Réserver">
+    </form>
+  </div>
 </section>
 
 <!-- SECTION TEMOIGNAGES -->

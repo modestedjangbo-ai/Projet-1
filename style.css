@@ -135,6 +135,80 @@
    background-color: white;
    color: black;
 }
+
+/**** Style de la section Réservation ***/
+# reservation{
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+# reservation h2{
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.gauche {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/*** Style des Fieldset et Legend ***/
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #e67e22;
+    /*** Couleur orange pour rappeler le thème resto ***/
+}
+
+/*** Style des champs de saisie ***/
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input [type="text"],
+input [type="tel"],
+input [type="email"],
+input [type="date"],
+input [type="time"],
+input [type="number"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Important pour que le padding ne dépasse pas */
+}
+
+/*** Style du bouton envoyer ***/
+input [type="submit"] {
+    background-color: #e67e22;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: bacground 0.3s;
+}
+
+input [type="submit"]:hover {
+    background-color: #d35400;
+}
 /***************** Responsive / Media queries **************/
 @media ( max-width: 768px) {
     .navbar{
