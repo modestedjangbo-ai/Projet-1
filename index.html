@@ -27,10 +27,11 @@
     <header class="hero" id="home">
         <div class="hero-content">
             <h1>Le Royaume des Saveurs locaux</h1>
+            <p class="tagline">Cuisine locale • Fraîcheur • Excellence</p>
             <p>Une expérience culinaire inoubliable au coeur de la ville.</p>
             <div class="cta-buttons">
-                <a href="reseverunetable" class="btn btn-primary">Réserver une table</a>
-                <a href="passercommande" class="btn btn-secondary">Passer commande</a>
+                <a href="#" class="btn btn-primary" onclick="openReservation()">Réserver une table</a>
+                <a href="#" class="btn btn-secondary" onclick="openCommande()">Passer commande</a>
             </div>
         </div>
     </header>
@@ -73,7 +74,7 @@
     <div class="gallery-container">
         <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="">
         <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="">
-        <img src="https://images.unsplash.com/photo-150467490024b7-0877df9cc836" alt="">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="">
         <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" alt="">
         <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="">
         <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269" alt="">
@@ -81,17 +82,45 @@
 </section>
 
 <!-- POPUP -->
+<!-- POPUP BOISSONS -->
 <div class="popup" id="popup">
-    <div class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <h2>Boissons & Desserts</h2>
-        <ul>
-            <li>Mojito - 2000 FCFA</li>
-            <li>Smoothie Ananas - 2000 FCFA</li>
-            <li>Tiramisu - 2000 FCFA</li>
-            <li>Mousse au chocolat - 2000 FCFA</li>
-        </ul>
+  <div class="popup-content large-popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Boissons & Desserts</h2>
+
+    <div class="drink-item">
+      <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d">
+      <div>
+        <h4>Mojito</h4>
+        <p>2000 FCFA</p>
+      </div>
     </div>
+
+    <div class="drink-item">
+      <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40">
+      <div>
+        <h4>Smoothie Ananas</h4>
+        <p>2000 FCFA</p>
+      </div>
+    </div>
+
+    <div class="drink-item">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+      <div>
+        <h4>Tiramisu</h4>
+        <p>2000 FCFA</p>
+      </div>
+    </div>
+
+    <div class="drink-item">
+      <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+      <div>
+        <h4>Mousse au chocolat</h4>
+        <p>2000 FCFA</p>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <script>
@@ -102,55 +131,45 @@ function openPopup(){
 function closePopup(){
     document.getElementById("popup").style.display="none";
 }
+
+function openReservation(){
+  document.getElementById("reservationPopup").style.display="flex";
+}
+
+function closeReservation(){
+  document.getElementById("reservationPopup").style.display="none";
+}
+
+function openCommande(){
+  document.getElementById("commandePopup").style.display="flex";
+}
+
+function closeCommande(){
+  document.getElementById("commandePopup").style.display="none";
+}
 </script>
-<!-- SECTION OFFRES -->
-<section id="offres">
-  <h2>Offres spéciales</h2>
+
 </section>
 
-<!-- SECTION RESERVATION -->
-<section id="reservation">
-  <h2>Réservation</h2>
-  <div class="gauche">
-    <form action="#" method="post">
-        <!--- Coordonnées Clients-->
-        <fieldset>
-            <legend>Vos Coordonnées</legend>
+<!-- POPUP RESERVATION -->
+<div class="popup" id="reservationPopup">
+  <div class="popup-content large-popup">
+    <span class="close" onclick="closeReservation()">&times;</span>
+    <h2>Réserver une table</h2>
 
-                <label for="name">Nom complet</label>
-                <input type="text" name="name" id="name" placeholder="name" required="required"> <br>
-            
-                <label for="tel">Téléphone</label>
-                <input type="tel" name="tel" id="tel" placeholder="tel" required="required"> <br>
-
-                <label for="mail">Email</label>
-                <input type="email" name="mail" id="mail" placeholder="votre email"  required="required"> <br>
-        
-        </fieldset>
-
-        <!-- Infos Réservation-->
-         <fieldset>
-            <legend>Détails de la Réservation</legend>
-
-                <label for="date">Date</label>
-                <input type="date" name="date" id="date"> <br>
-
-                <label for="time">Heure</label>
-                <input type="time" name="time" id="time"> <br>
-            
-                <label for="number">Nombre de personnes</label>
-                <input type="number" name="number" id="number" min="1"> <br>
-
-                <label for="message">Message</label>
-                <textarea name="message" id="message">Votre message</textarea> <br>
-            
-         </fieldset>
-         
-         <input type="submit" value="Confirmer la Réserver">
+    <form class="form-reservation">
+      <input type="text" placeholder="Nom et prénom" required>
+      <input type="datetime-local" required>
+      <input type="number" placeholder="Nombre de personnes" required>
+      <input type="tel" placeholder="Téléphone" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Commentaires ou demandes spéciales"></textarea>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
   </div>
-</section>
+</div>
 
+<<<<<<< HEAD
 <!-- SECTION TEMOIGNAGES -->
 <section id="témoignages">
   <h2> Témoignages de clients</h2>
@@ -183,5 +202,79 @@ function closePopup(){
 
 
 <footer></footer>
+=======
+<!-- POPUP COMMANDE -->
+<div class="popup" id="commandePopup">
+  <div class="popup-content large-popup">
+    <span class="close" onclick="closeCommande()">&times;</span>
+    <h2>Passer une commande</h2>
+
+    <form class="form-reservation">
+      <input type="text" placeholder="Nom et prénom" required>
+      <input type="tel" placeholder="Téléphone" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Votre commande"></textarea>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+
+
+<!-------footer-------------------->
+<footer class="footer">
+<div class="footer-container">
+  
+  <!--Logo + description --->
+<div class="footer-section">
+<h2 class="footer-logo">Le Bonheur</h2>
+<p>Restaurant de spécialités africaines offrant une expérience culinaire unique.
+  </p>
+  </div>
+
+  <!----Liens utiles----------------->
+  <div class="footer-section">
+<br><h3>Liens utiles</h3> 
+<ul>
+<li><a href="#home">ACCUEIL</a></li>
+  <li><a href="#menu">NOTRE MENU</a></li>
+  <li><a href="#offres">OFFRES SPECIALES</a></li>
+  <li><a href="#reservation">RESERVATION</a></li>
+  <li><a href="#galerie">GALERIE</a></li>
+  <li><a href="#temoignages">TEMOIGNAGES</a></li>
+  <li><a href="#contact">CONTACT</a></li>
+</ul>
+</div>
+
+<!---------Horaires-->
+<div class="footer-section">
+<h3>Horaires</h3>
+<p>Lundi - Vendredi : 10h - 22h</p>
+<p>Samedi : 12h - 23h</p>
+<p>Dimanche : 12h -21h</p>
+</div>
+
+<!-------Réseaux sociaux-->
+<div class="footer-section">
+<h3>Suivez-nous</h3>
+
+<div class="social-icons">
+<a href="https://www.facebook.com/share/1HSoNyiPxP/"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://www.instagram.com/frejucedubonheur?igsh=MWhmYWpwNXgxa2YyMw=="><i class="fa-brands fa-instagram"></i></a>
+<a href="https://x.com/FrejuceLima"><i class="fa-brands fa-twitter"></i></a>
+<a href="https://wa.me/c/216264505036908"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Le Bonheur| Mentions légales| Politique de confidentialité</p>
+</div>
+
+</footer>
+>>>>>>> 64779f4a797964b07d248e0631cdcd28e0c0e56a
 </body>
 </html>
+
