@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <!--partie du menu de navigation-->
@@ -246,11 +248,10 @@ loading="lazy">
   </div>
 </div>
 
-<section id="gestion-rh" class="py-5 bg-light">
-    <div class="container">
+<section id="gestion-rh" class="container mt-5">
         <div class="card shadow border-0">
             <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
-                <h2 class="h4 mb-0 text-dark">Gestion des Employés</h2>
+                <h2 class="h4 mb-0">Gestion des Employés</h2>
                 <button class="btn btn-warning text-white fw-bold" data-bs-toggle="modal" data-bs-target="#modalEmploye">
                     <i class="fas fa-plus"></i> Ajouter un employé
                 </button>
@@ -261,7 +262,7 @@ loading="lazy">
                         <thead class="table-light">
                             <tr>
                                 <th>MATRICULE</th>
-                                <th>PRENOM</th>
+                                <th>PRÉNOM</th>
                                 <th>NOM</th>
                                 <th>DÉPARTEMENT</th>
                                 <th>ACTIONS</th>
@@ -275,7 +276,7 @@ loading="lazy">
                                 <td>Cuisine</td>
                                 <td>
                                     <button class="btn btn-outline-danger btn-sm" onclick="supprimerEmploye(this)">
-                                        <i class="fas fa-trash"></i>
+                                        <i class="fas fa-trash"></i> Supprimer
                                     </button>
                                 </td>
                             </tr>
@@ -284,47 +285,47 @@ loading="lazy">
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="modal fade" id="modalEmploye" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Nouvel Employé</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="formAjout">
-                    <div class="mb-3">
-                        <label class="form-label">Prénom <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputPrenom">
-                        <div class="text-danger small d-none" id="errPrenom">Ce champ est requis.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Nom <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputNom">
-                        <div class="text-danger small d-none" id="errNom">Ce champ est requis.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Département <span class="text-danger">*</span></label>
-                        <select class="form-select" id="inputService">
-                            <option value="">Choisir un service...</option>
-                            <option value="Cuisine">Cuisine</option>
-                            <option value="Service">Service en salle</option>
-                            <option value="Administration">Administration</option>
-                        </select>
-                        <div class="text-danger small d-none" id="errService">Veuillez choisir un service.</div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-success" onclick="validerFormulaire()">Enregistrer</button>
+    <div class="modal fade" id="modalEmploye" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajouter un collaborateur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formAjout">
+                        <div class="mb-3">
+                            <label class="form-label">Prénom <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="inputPrenom">
+                            <div class="text-danger small d-none" id="errPrenom">Ce champ est obligatoire.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nom <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="inputNom">
+                            <div class="text-danger small d-none" id="errNom">Ce champ est obligatoire.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Département <span class="text-danger">*</span></label>
+                            <select class="form-select" id="inputService">
+                                <option value="">Choisir un service...</option>
+                                <option value="Cuisine">Cuisine</option>
+                                <option value="Service en salle">Service en salle</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Finances">Finances</option>
+                            </select>
+                            <div class="text-danger small d-none" id="errService">Veuillez choisir un service.</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-success" onclick="validerFormulaire()">Enregistrer</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 <script>
 function openPopup(){
@@ -351,36 +352,60 @@ function closeCommande(){
   document.getElementById("commandePopup").style.display="none";
 }
 
-// Fonction pour valider le formulaire (Exercice)
+// Fonction pour valider et enregistrer
 function validerFormulaire() {
-    const prenom = document.getElementById('inputPrenom');
-    const nom = document.getElementById('inputNom');
-    const service = document.getElementById('inputService');
+    const inputPrenom = document.getElementById('inputPrenom');
+    const inputNom = document.getElementById('inputNom');
+    const inputService = document.getElementById('inputService');
+    
     let estValide = true;
 
-    // Logique de validation simple
-    if (prenom.value.trim() === "") {
+    // Validation Prénom
+    if (inputPrenom.value.trim() === "") {
         document.getElementById('errPrenom').classList.remove('d-none');
         estValide = false;
     } else {
         document.getElementById('errPrenom').classList.add('d-none');
     }
 
-    if (estValide && nom.value && service.value) {
-        alert("Employé enregistré avec succès !");
-        // Ferme le modal automatiquement après succès
-        const modalElement = document.getElementById('modalEmploye');
-        const modalInstance = bootstrap.Modal.getInstance(modalElement);
-        modalInstance.hide();
+    // Validation Nom
+    if (inputNom.value.trim() === "") {
+        document.getElementById('errNom').classList.remove('d-none');
+        estValide = false;
+    } else {
+        document.getElementById('errNom').classList.add('d-none');
+    }
+
+    // Validation Service
+    if (inputService.value === "") {
+        document.getElementById('errService').classList.remove('d-none');
+        estValide = false;
+    } else {
+        document.getElementById('errService').classList.add('d-none');
+    }
+
+    // Si tout est OK
+    if (estValide) {
+        alert("✅ Employé enregistré avec succès !");
+        
+        // Fermer le modal (méthode Bootstrap)
+        const modalEl = document.getElementById('modalEmploye');
+        const instanceModal = bootstrap.Modal.getInstance(modalEl);
+        instanceModal.hide();
+
+        // Optionnel : Réinitialiser le formulaire
+        document.getElementById('formAjout').reset();
     }
 }
 
-// Fonction pour la suppression (Exercice)
+// Fonction pour supprimer avec confirmation
 function supprimerEmploye(bouton) {
+    // Confirm Dialog (OK / Annuler)
     if (confirm("Voulez-vous vraiment supprimer ce collaborateur ?")) {
-        // Supprime la ligne du tableau
+        // Simulation de suppression
         bouton.closest('tr').remove();
-        alert("Suppression effectuée !");
+        // Simulation d'un toast
+        alert("🗑️ Suppression réussie !");
     }
 }
 </script>
