@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Le Bonheur — Restaurant</title>
+ 
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--partie du menu de navigation-->
+ 
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
     <nav class="navbar">
         <div class="logo">Le Bonheur</div>
-
         <ul class="nav-links">
-  <li><a href="#home">ACCUEIL</a></li>
-  <li><a href="#menu">NOTRE MENU</a></li>
-  <li><a href="#offres">OFFRES SPECIALES</a></li>
-  <li><a href="#reservation">RESERVATION</a></li>
-  <li><a href="#galerie">GALERIE</a></li>
-  <li><a href="#temoignages">TEMOIGNAGES</a></li>
-  <li><a href="#contact">CONTACT</a></li>
-</ul>
+            <li><a href="#home">ACCUEIL</a></li>
+            <li><a href="#menu">NOTRE MENU</a></li>
+            <li><a href="#offres">OFFRES SPECIALES</a></li>
+            <li><a href="#reservation">RESERVATION</a></li>
+            <li><a href="#galerie">GALERIE</a></li>
+            <li><a href="#temoignages">TEMOIGNAGES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
     </nav>
-
-    <!--partie de header-->
+ 
+    <!-- =====================================================
+         HERO / HEADER
+    ===================================================== -->
     <header class="hero" id="home">
         <div class="hero-content">
             <h1>Le Royaume des Saveurs locaux</h1>
@@ -38,217 +44,172 @@
             </div>
         </div>
     </header>
-
-    <!-- SECTION MENU -->
-<section class="menu-section" id="menu">
-    <h2>Nos Plats Phares</h2>
-
-    <div class="menu-container">
-
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="">
-            <h3>Yassa Poulet</h3>
-            <p>Un délicieux poulet mariné au citron et aux oignons.</p>
-            <span>5000 FCFA</span>
+ 
+    <!-- =====================================================
+         SECTION MENU
+    ===================================================== -->
+    <section class="menu-section" id="menu">
+        <h2>Nos Plats Phares</h2>
+        <div class="menu-container">
+ 
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Yassa Poulet">
+                <h3>Yassa Poulet</h3>
+                <p>Un délicieux poulet mariné au citron et aux oignons.</p>
+                <span>5000 FCFA</span>
+            </div>
+ 
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Double Burger">
+                <h3>Double Burger</h3>
+                <p>Burger gourmand avec double steak et fromage fondant.</p>
+                <span>6000 FCFA</span>
+            </div>
+ 
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="Riz au poisson">
+                <h3>Riz au poisson</h3>
+                <p>Spécialité locale riche en saveurs traditionnelles.</p>
+                <span>3000 FCFA</span>
+            </div>
+ 
         </div>
-
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="">
-            <h3>Double Burger</h3>
-            <p>Burger gourmand avec double steak et fromage fondant.</p>
-            <span>6000 FCFA</span>
+        <button class="menu-popup-btn" onclick="openPopup()">Voir Boissons & Desserts</button>
+    </section>
+ 
+    <!-- =====================================================
+         SECTION OFFRES SPÉCIALES (ancre)
+    ===================================================== -->
+    <section id="offres"></section>
+ 
+    <!-- =====================================================
+         SECTION RÉSERVATION
+    ===================================================== -->
+    <section id="reservation">
+        <h2>Réservation</h2>
+        <div class="center">
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Vos Coordonnées</legend>
+                    <label for="name">Nom complet</label>
+                    <input type="text" name="name" id="name" placeholder="Votre nom" required>
+ 
+                    <label for="tel">Téléphone</label>
+                    <input type="tel" name="tel" id="tel" placeholder="Ex: 00228..." required>
+ 
+                    <label for="mail">Email</label>
+                    <input type="email" name="mail" id="mail" placeholder="votre@email.com" required>
+                </fieldset>
+ 
+                <fieldset>
+                    <legend>Détails de la Réservation</legend>
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" required>
+ 
+                    <label for="time">Heure</label>
+                    <input type="time" name="time" id="time" required>
+ 
+                    <label for="number">Nombre de personnes</label>
+                    <input type="number" name="number" id="number" min="1" value="1">
+ 
+                    <label for="message">Message spécial</label>
+                    <textarea name="message" id="message" rows="4">Aucun message particulier</textarea>
+                </fieldset>
+ 
+                <input type="submit" value="Confirmer la Réservation">
+            </form>
         </div>
-
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="">
-            <h3>Riz au poisson</h3>
-            <p>Spécialité locale riche en saveurs traditionnelles.</p>
-            <span>3000 FCFA</span>
+    </section>
+ 
+    <!-- =====================================================
+         SECTION GALERIE
+    ===================================================== -->
+    <section class="gallery" id="galerie">
+        <h2>Notre Galerie</h2>
+        <div class="gallery-container">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Galerie 1">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="Galerie 2">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Galerie 3">
+            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" alt="Galerie 4">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Galerie 5">
+            <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269" alt="Galerie 6">
         </div>
-
-    </div>
-
-    <button class="menu-popup-btn" onclick="openPopup()">Voir Boissons & Desserts</button>
-</section>
-
-<!-- SECTION GALERIE -->
-<section class="gallery" id="galerie">
-    <h2>Notre Galerie</h2>
-    <div class="gallery-container">
-        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="">
-        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="">
-        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" alt="">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="">
-        <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269" alt="">
-    </div>
-</section>
-
-<!---SECTION RESERVATION-->
-<section id="reservation">
-  <h2>Réservation</h2>
-  <div class="center">
-    <form action="#" method="post"> 
-      <fieldset>
-            <legend>Vos Coordonnées</legend>
-            <label for="name">Nom complet</label>
-            <input type="text" name="name" id="name" placeholder="Votre nom" required>
-            
-            <label for="tel">Téléphone</label>
-            <input type="tel" name="tel" id="tel" placeholder="Ex: 00228..." required>
-
-            <label for="mail">Email</label>
-            <input type="email" name="mail" id="mail" placeholder="votre@email.com" required>
-        </fieldset>
-
-        <fieldset>
-            <legend>Détails de la Réservation</legend>
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date" required>
-
-            <label for="time">Heure</label>
-            <input type="time" name="time" id="time" required>
-            
-            <label for="number">Nombre de personnes</label>
-            <input type="number" name="number" id="number" min="1" value="1">
-
-            <label for="message">Message spécial</label>
-            <textarea name="message" id="message" rows="4">Aucun message particulier</textarea>
-        </fieldset>
-         
-        <input type="submit" value="Confirmer la Réservation">
-    </form>
-  </div>
-</section>
-
-<!-- SECTION TEMOIGNAGES -->
-<section class="temoignages" id="temoignages">
-    <h2>Ce que disent nos clients</h2>
-
-    <div class="temoignage-container">
-
-        <div class="temoignage-card">
-            <img src="https://randomuser.me/api/portraits/women/32.jpg">
-            <h3>Fatou Diop</h3>
-            <p>Un restaurant incroyable ! Les plats sont délicieux et le service est excellent.</p>
+    </section>
+ 
+    <!-- =====================================================
+         SECTION TÉMOIGNAGES
+    ===================================================== -->
+    <section class="temoignages" id="temoignages">
+        <h2>Ce que disent nos clients</h2>
+        <div class="temoignage-container">
+ 
+            <div class="temoignage-card">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Fatou Diop">
+                <h3>Fatou Diop</h3>
+                <p>Un restaurant incroyable ! Les plats sont délicieux et le service est excellent.</p>
+            </div>
+ 
+            <div class="temoignage-card">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Mamadou Fall">
+                <h3>Mamadou Fall</h3>
+                <p>Très bonne ambiance et cuisine authentique. Je recommande vivement.</p>
+            </div>
+ 
+            <div class="temoignage-card">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Awa Ndiaye">
+                <h3>Awa Ndiaye</h3>
+                <p>Une expérience culinaire exceptionnelle. Je reviendrai sans hésiter.</p>
+            </div>
+ 
         </div>
-
-        <div class="temoignage-card">
-            <img src="https://randomuser.me/api/portraits/men/45.jpg">
-            <h3>Mamadou Fall</h3>
-            <p>Très bonne ambiance et cuisine authentique. Je recommande vivement.</p>
+    </section>
+ 
+    <!-- =====================================================
+         SECTION CONTACT
+    ===================================================== -->
+    <section class="contact" id="contact">
+        <h2>Contactez-nous</h2>
+        <div class="contact-container">
+ 
+            <div class="contact-info">
+                <p><i class="fa-solid fa-location-dot"></i> Dakar, Sénégal</p>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+221770000000">+221 77 000 00 00</a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:restaurantbonheur@gmail.com">restaurantbonheur@gmail.com</a>
+                </p>
+            </div>
+ 
+            <form class="contact-form">
+                <input type="text" placeholder="Prénom et Nom" required>
+                <input type="tel" placeholder="Téléphone" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Objet">
+                <textarea placeholder="Votre message"></textarea>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+ 
         </div>
-
-        <div class="temoignage-card">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg">
-            <h3>Awa Ndiaye</h3>
-            <p>Une expérience culinaire exceptionnelle. Je reviendrai sans hésiter.</p>
+ 
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps?q=dakar&output=embed"
+                width="100%"
+                height="300"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
         </div>
-
-    </div>
-</section>
-
-<!-- SECTION CONTACT -->
-<section class="contact" id="contact">
-
-<h2>Contactez-nous</h2>
-
-<div class="contact-container">
-
-<div class="contact-info">
-
-<p><i class="fa-solid fa-location-dot"></i> Dakar, Sénégal</p>
-
-<p>
-<i class="fa-solid fa-phone"></i>
-<a href="tel:+221770000000">+221 77 000 00 00</a>
-</p>
-
-<p>
-<i class="fa-solid fa-envelope"></i>
-<a href="mailto:restaurantbonheur@gmail.com">
-restaurantbonheur@gmail.com
-</a>
-</p>
-
-</div>
-
-<form class="contact-form">
-
-<input type="text" placeholder="Prénom et Nom" required>
-
-<input type="tel" placeholder="Téléphone" required>
-
-<input type="email" placeholder="Email" required>
-
-<input type="text" placeholder="Objet">
-
-<textarea placeholder="Votre message"></textarea>
-
-<button type="submit" class="btn btn-primary">
-Envoyer
-</button>
-
-</form>
-
-</div>
-
-<div class="map">
-<iframe 
-src="https://www.google.com/maps?q=dakar&output=embed"
-width="100%" 
-height="300" 
-style="border:0;" 
-allowfullscreen=""
-loading="lazy">
-</iframe>
-</div>
-
-</section>
-
-<!-- POPUP -->
-<!-- POPUP BOISSONS -->
-<div class="popup" id="popup">
-  <div class="popup-content large-popup">
-    <span class="close" onclick="closePopup()">&times;</span>
-    <h2>Boissons & Desserts</h2>
-
-    <div class="drink-item">
-      <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d">
-      <div>
-        <h4>Mojito</h4>
-        <p>2000 FCFA</p>
-      </div>
-    </div>
-
-    <div class="drink-item">
-      <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40">
-      <div>
-        <h4>Smoothie Ananas</h4>
-        <p>2000 FCFA</p>
-      </div>
-    </div>
-
-    <div class="drink-item">
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
-      <div>
-        <h4>Tiramisu</h4>
-        <p>2000 FCFA</p>
-      </div>
-    </div>
-
-    <div class="drink-item">
-      <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
-      <div>
-        <h4>Mousse au chocolat</h4>
-        <p>2000 FCFA</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<section id="gestion-rh" class="container mt-5">
+    </section>
+ 
+    <!-- =====================================================
+         SECTION GESTION RH (Employés)
+    ===================================================== -->
+    <section id="gestion-rh" class="container mt-5">
         <div class="card shadow border-0">
             <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
                 <h2 class="h4 mb-0">Gestion des Employés</h2>
@@ -286,13 +247,136 @@ loading="lazy">
             </div>
         </div>
     </section>
-
+ 
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+ 
+            <div class="footer-section">
+                <h2 class="footer-logo">Le Bonheur</h2>
+                <p>Restaurant de spécialités africaines offrant une expérience culinaire unique.</p>
+            </div>
+ 
+            <div class="footer-section">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="#home">ACCUEIL</a></li>
+                    <li><a href="#menu">NOTRE MENU</a></li>
+                    <li><a href="#offres">OFFRES SPECIALES</a></li>
+                    <li><a href="#reservation">RESERVATION</a></li>
+                    <li><a href="#galerie">GALERIE</a></li>
+                    <li><a href="#temoignages">TEMOIGNAGES</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+ 
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lundi - Vendredi : 10h - 22h</p>
+                <p>Samedi : 12h - 23h</p>
+                <p>Dimanche : 12h - 21h</p>
+            </div>
+ 
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1HSoNyiPxP/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/frejucedubonheur?igsh=MWhmYWpwNXgxa2YyMw=="><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/FrejuceLima"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://wa.me/c/216264505036908"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+ 
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Le Bonheur | Mentions légales | Politique de confidentialité</p>
+        </div>
+    </footer>
+ 
+    <!-- =====================================================
+         BOUTON WHATSAPP FLOTTANT
+    ===================================================== -->
+    <a href="https://wa.me/221770000000" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+ 
+    <!-- =====================================================
+         POPUP — BOISSONS & DESSERTS
+    ===================================================== -->
+    <div class="popup" id="popup">
+        <div class="popup-content large-popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Boissons & Desserts</h2>
+ 
+            <div class="drink-item">
+                <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d" alt="Mojito">
+                <div><h4>Mojito</h4><p>2000 FCFA</p></div>
+            </div>
+ 
+            <div class="drink-item">
+                <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40" alt="Smoothie Ananas">
+                <div><h4>Smoothie Ananas</h4><p>2000 FCFA</p></div>
+            </div>
+ 
+            <div class="drink-item">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Tiramisu">
+                <div><h4>Tiramisu</h4><p>2000 FCFA</p></div>
+            </div>
+ 
+            <div class="drink-item">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c" alt="Mousse au chocolat">
+                <div><h4>Mousse au chocolat</h4><p>2000 FCFA</p></div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- =====================================================
+         POPUP — RÉSERVATION
+    ===================================================== -->
+    <div class="popup" id="reservationPopup">
+        <div class="popup-content large-popup">
+            <span class="close" onclick="closeReservation()">&times;</span>
+            <h2>Réserver une table</h2>
+            <form class="form-reservation">
+                <input type="text" placeholder="Nom et prénom" required>
+                <input type="datetime-local" required>
+                <input type="number" placeholder="Nombre de personnes" required>
+                <input type="tel" placeholder="Téléphone" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Commentaires ou demandes spéciales"></textarea>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+ 
+    <!-- =====================================================
+         POPUP — COMMANDE
+    ===================================================== -->
+    <div class="popup" id="commandePopup">
+        <div class="popup-content large-popup">
+            <span class="close" onclick="closeCommande()">&times;</span>
+            <h2>Passer une commande</h2>
+            <form class="form-reservation">
+                <input type="text" placeholder="Nom et prénom" required>
+                <input type="tel" placeholder="Téléphone" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Votre commande"></textarea>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+ 
+    <!-- =====================================================
+         MODAL BOOTSTRAP — AJOUT EMPLOYÉ
+    ===================================================== -->
     <div class="modal fade" id="modalEmploye" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Ajouter un collaborateur</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
                 <div class="modal-body">
                     <form id="formAjout">
@@ -326,178 +410,14 @@ loading="lazy">
             </div>
         </div>
     </div>
-
-<script>
-function openPopup(){
-    document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-    document.getElementById("popup").style.display="none";
-}
-
-function openReservation(){
-  document.getElementById("reservationPopup").style.display="flex";
-}
-
-function closeReservation(){
-  document.getElementById("reservationPopup").style.display="none";
-}
-
-function openCommande(){
-  document.getElementById("commandePopup").style.display="flex";
-}
-
-function closeCommande(){
-  document.getElementById("commandePopup").style.display="none";
-}
-
-// Fonction pour valider et enregistrer
-function validerFormulaire() {
-    const inputPrenom = document.getElementById('inputPrenom');
-    const inputNom = document.getElementById('inputNom');
-    const inputService = document.getElementById('inputService');
-    
-    let estValide = true;
-
-    // Validation Prénom
-    if (inputPrenom.value.trim() === "") {
-        document.getElementById('errPrenom').classList.remove('d-none');
-        estValide = false;
-    } else {
-        document.getElementById('errPrenom').classList.add('d-none');
-    }
-
-    // Validation Nom
-    if (inputNom.value.trim() === "") {
-        document.getElementById('errNom').classList.remove('d-none');
-        estValide = false;
-    } else {
-        document.getElementById('errNom').classList.add('d-none');
-    }
-
-    // Validation Service
-    if (inputService.value === "") {
-        document.getElementById('errService').classList.remove('d-none');
-        estValide = false;
-    } else {
-        document.getElementById('errService').classList.add('d-none');
-    }
-
-    // Si tout est OK
-    if (estValide) {
-        alert("✅ Employé enregistré avec succès !");
-        
-        // Fermer le modal (méthode Bootstrap)
-        const modalEl = document.getElementById('modalEmploye');
-        const instanceModal = bootstrap.Modal.getInstance(modalEl);
-        instanceModal.hide();
-
-        // Optionnel : Réinitialiser le formulaire
-        document.getElementById('formAjout').reset();
-    }
-}
-
-// Fonction pour supprimer avec confirmation
-function supprimerEmploye(bouton) {
-    // Confirm Dialog (OK / Annuler)
-    if (confirm("Voulez-vous vraiment supprimer ce collaborateur ?")) {
-        // Simulation de suppression
-        bouton.closest('tr').remove();
-        // Simulation d'un toast
-        alert("🗑️ Suppression réussie !");
-    }
-}
-</script>
-
-
-</section>
-
-<!-- POPUP RESERVATION -->
-<div class="popup" id="reservationPopup">
-  <div class="popup-content large-popup">
-    <span class="close" onclick="closeReservation()">&times;</span>
-    <h2>Réserver une table</h2>
-
-    <form class="form-reservation">
-      <input type="text" placeholder="Nom et prénom" required>
-      <input type="datetime-local" required>
-      <input type="number" placeholder="Nombre de personnes" required>
-      <input type="tel" placeholder="Téléphone" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Commentaires ou demandes spéciales"></textarea>
-      <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
-  </div>
-</div>
-
-<!-- POPUP COMMANDE -->
-<div class="popup" id="commandePopup">
-  <div class="popup-content large-popup">
-    <span class="close" onclick="closeCommande()">&times;</span>
-    <h2>Passer une commande</h2>
-
-    <form class="form-reservation">
-      <input type="text" placeholder="Nom et prénom" required>
-      <input type="tel" placeholder="Téléphone" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Votre commande"></textarea>
-      <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
-  </div>
-</div>
-
-<footer class="footer">
-<div class="footer-container">
-
-<div class="footer-section">
-<h2 class="footer-logo">Le Bonheur</h2>
-<p>Restaurant de spécialités africaines offrant une expérience culinaire unique.</p>
-</div>
-
-<div class="footer-section">
-<h3>Liens utiles</h3>
-<ul>
-<li><a href="#home">ACCUEIL</a></li>
-<li><a href="#menu">NOTRE MENU</a></li>
-<li><a href="#offres">OFFRES SPECIALES</a></li>
-<li><a href="#reservation">RESERVATION</a></li>
-<li><a href="#galerie">GALERIE</a></li>
-<li><a href="#temoignages">TEMOIGNAGES</a></li>
-<li><a href="#contact">CONTACT</a></li>
-</ul>
-</div>
-
-<div class="footer-section">
-<h3>Horaires</h3>
-<p>Lundi - Vendredi : 10h - 22h</p>
-<p>Samedi : 12h - 23h</p>
-<p>Dimanche : 12h - 21h</p>
-</div>
-
-<div class="footer-section">
-<h3>Suivez-nous</h3>
-
-<div class="social-icons">
-<a href="https://www.facebook.com/share/1HSoNyiPxP/"><i class="fa-brands fa-facebook"></i></a>
-<a href="https://www.instagram.com/frejucedubonheur?igsh=MWhmYWpwNXgxa2YyMw=="><i class="fa-brands fa-instagram"></i></a>
-<a href="https://x.com/FrejuceLima"><i class="fa-brands fa-twitter"></i></a>
-<a href="https://wa.me/c/216264505036908"><i class="fa-brands fa-whatsapp"></i></a>
-</div>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-<p>© 2026 Le Bonheur | Mentions légales | Politique de confidentialité</p>
-</div>
-
-</footer>
-
-<a href="https://wa.me/221770000000" class="whatsapp">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
-
+ 
+    <!-- =====================================================
+         SCRIPTS (en bas de page pour meilleures performances)
+    ===================================================== -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script principal -->
+    <script src="script.js"></script>
+ 
 </body>
 </html>
