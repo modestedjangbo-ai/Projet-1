@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Bonheur — Restaurant</title>
- 
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,26 +13,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-    <!-- =====================================================
-         NAVIGATION
-    ===================================================== -->
+
+    <!-- ========== NAVIGATION ============= -->
     <nav class="navbar">
         <div class="logo">Le Bonheur</div>
         <ul class="nav-links">
-            <li><a href="#home">ACCUEIL</a></li>
-            <li><a href="#menu">NOTRE MENU</a></li>
-            <li><a href="#offres">OFFRES SPECIALES</a></li>
-            <li><a href="#reservation">RESERVATION</a></li>
-            <li><a href="#galerie">GALERIE</a></li>
-            <li><a href="#temoignages">TEMOIGNAGES</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#home"><i class="fa-solid fa-house"></i> ACCUEIL</a></li>
+            <li><a href="#menu"><i class="fa-solid fa-utensils"></i> NOTRE MENU</a></li>
+            <li><a href="#offres"><i class="fa-solid fa-tag"></i> OFFRES SPECIALES</a></li>
+            <li><a href="#reservation"><i class="fa-solid fa-calendar-check"></i> RESERVATION</a></li>
+            <li><a href="#galerie"><i class="fa-solid fa-images"></i> GALERIE</a></li>
+            <li><a href="#temoignages"><i class="fa-solid fa-star"></i> TEMOIGNAGES</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
         </ul>
     </nav>
- 
-    <!-- =====================================================
-         HERO / HEADER
-    ===================================================== -->
+
+
+    <!-- ================= HERO / HEADER ================= -->
     <header class="hero" id="home">
         <div class="hero-content">
             <h1>Le Royaume des Saveurs locaux</h1>
@@ -44,86 +41,150 @@
             </div>
         </div>
     </header>
- 
-    <!-- =====================================================
-         SECTION MENU
-    ===================================================== -->
+
+
+    <!-- ============= SECTION MENU ============ -->
     <section class="menu-section" id="menu">
         <h2>Nos Plats Phares</h2>
         <div class="menu-container">
- 
+
             <div class="menu-card">
                 <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Yassa Poulet">
                 <h3>Yassa Poulet</h3>
                 <p>Un délicieux poulet mariné au citron et aux oignons.</p>
                 <span>5000 FCFA</span>
             </div>
- 
+
             <div class="menu-card">
                 <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Double Burger">
                 <h3>Double Burger</h3>
                 <p>Burger gourmand avec double steak et fromage fondant.</p>
                 <span>6000 FCFA</span>
             </div>
- 
+
             <div class="menu-card">
                 <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="Riz au poisson">
                 <h3>Riz au poisson</h3>
                 <p>Spécialité locale riche en saveurs traditionnelles.</p>
                 <span>3000 FCFA</span>
             </div>
- 
+
         </div>
         <button class="menu-popup-btn" onclick="openPopup()">Voir Boissons & Desserts</button>
     </section>
- 
-    <!-- =====================================================
-         SECTION OFFRES SPÉCIALES (ancre)
-    ===================================================== -->
-    <section id="offres"></section>
- 
-    <!-- =====================================================
-         SECTION RÉSERVATION
-    ===================================================== -->
+
+
+    <!-- ========== SECTION OFFRES SPÉCIAL ============= -->
+    <section id="offres">
+        <section class="container my-5">
+            <h2 class="text-center mb-4">🔥 Offres spéciales</h2>
+
+            <div class="row">
+
+                <!-- Offre 1 -->
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <span class="badge bg-danger promo-badge">-30%</span>
+                        <img src="burger.jpg" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Menu Burger</h5>
+                            <p class="card-text">Burger + Frites + Boisson</p>
+                            <p>
+                                <span class="old-price">10 000 FCFA</span>
+                                <span class="new-price">7 000 FCFA</span>
+                            </p>
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#orderModal">Commander</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offre 2 -->
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <span class="badge bg-danger promo-badge">-20%</span>
+                        <img src="pizza.jpg" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Pizza Duo</h5>
+                            <p class="card-text">2 Pizzas au choix</p>
+                            <p>
+                                <span class="old-price">15 000 FCFA</span>
+                                <span class="new-price">12 000 FCFA</span>
+                            </p>
+                            <!--button class="btn btn-warning">Commander</button-->
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                Commander
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offre 3 -->
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <span class="badge bg-danger promo-badge">-15%</span>
+                        <img src="dessert.jpg" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dessert Lovers</h5>
+                            <p class="card-text">3 Desserts au choix</p>
+                            <p>
+                                <span class="old-price">8 000 FCFA</span>
+                                <span class="new-price">6 800 FCFA</span>
+                            </p>
+                            <!--button class="btn btn-warning">Commander</button-->
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                Commander
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </section>
+
+
+    <!-- =============== SECTION RÉSERVATION ============= -->
     <section id="reservation">
         <h2>Réservation</h2>
         <div class="center">
             <form action="#" method="post">
+
                 <fieldset>
                     <legend>Vos Coordonnées</legend>
-                    <label for="name">Nom complet</label>
+
+                    <label for="name">Nom complet <span class="text-danger">*</span></label>
                     <input type="text" name="name" id="name" placeholder="Votre nom" required>
- 
-                    <label for="tel">Téléphone</label>
+
+                    <label for="tel">Téléphone <span class="text-danger">*</span></label>
                     <input type="tel" name="tel" id="tel" placeholder="Ex: 00228..." required>
- 
-                    <label for="mail">Email</label>
+
+                    <label for="mail">Email <span class="text-danger">*</span></label>
                     <input type="email" name="mail" id="mail" placeholder="votre@email.com" required>
                 </fieldset>
- 
+
                 <fieldset>
                     <legend>Détails de la Réservation</legend>
-                    <label for="date">Date</label>
+
+                    <label for="date">Date <span class="text-danger">*</span></label>
                     <input type="date" name="date" id="date" required>
- 
-                    <label for="time">Heure</label>
+
+                    <label for="time">Heure <span class="text-danger">*</span></label>
                     <input type="time" name="time" id="time" required>
- 
-                    <label for="number">Nombre de personnes</label>
+
+                    <label for="number">Nombre de personnes <span class="text-danger">*</span></label>
                     <input type="number" name="number" id="number" min="1" value="1">
- 
+
                     <label for="message">Message spécial</label>
                     <textarea name="message" id="message" rows="4">Aucun message particulier</textarea>
                 </fieldset>
- 
+
                 <input type="submit" value="Confirmer la Réservation">
             </form>
         </div>
     </section>
- 
-    <!-- =====================================================
-         SECTION GALERIE
-    ===================================================== -->
+
+
+    <!-- ============== SECTION GALERIE =========== -->
     <section class="gallery" id="galerie">
         <h2>Notre Galerie</h2>
         <div class="gallery-container">
@@ -135,42 +196,40 @@
             <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269" alt="Galerie 6">
         </div>
     </section>
- 
-    <!-- =====================================================
-         SECTION TÉMOIGNAGES
-    ===================================================== -->
+
+
+    <!-- ============= SECTION TÉMOIGNAGES ============= -->
     <section class="temoignages" id="temoignages">
         <h2>Ce que disent nos clients</h2>
         <div class="temoignage-container">
- 
+
             <div class="temoignage-card">
                 <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Fatou Diop">
                 <h3>Fatou Diop</h3>
                 <p>Un restaurant incroyable ! Les plats sont délicieux et le service est excellent.</p>
             </div>
- 
+
             <div class="temoignage-card">
                 <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Mamadou Fall">
                 <h3>Mamadou Fall</h3>
                 <p>Très bonne ambiance et cuisine authentique. Je recommande vivement.</p>
             </div>
- 
+
             <div class="temoignage-card">
                 <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Awa Ndiaye">
                 <h3>Awa Ndiaye</h3>
                 <p>Une expérience culinaire exceptionnelle. Je reviendrai sans hésiter.</p>
             </div>
- 
+
         </div>
     </section>
- 
-    <!-- =====================================================
-         SECTION CONTACT
-    ===================================================== -->
+
+
+    <!-- ===========  SECTION CONTACT =========== -->
     <section class="contact" id="contact">
         <h2>Contactez-nous</h2>
         <div class="contact-container">
- 
+
             <div class="contact-info">
                 <p><i class="fa-solid fa-location-dot"></i> Dakar, Sénégal</p>
                 <p>
@@ -182,18 +241,23 @@
                     <a href="mailto:restaurantbonheur@gmail.com">restaurantbonheur@gmail.com</a>
                 </p>
             </div>
- 
-            <form class="contact-form">
-                <input type="text" placeholder="Prénom et Nom" required>
-                <input type="tel" placeholder="Téléphone" required>
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="Objet">
-                <textarea placeholder="Votre message"></textarea>
+
+            <form class="contact-form" id="formContact">
+                <label>Prénom et Nom <span class="text-danger">*</span></label>
+                <input type="text" id="contactNom" placeholder="Prénom et Nom" required>
+                <label>Téléphone <span class="text-danger">*</span></label>
+                <input type="tel" id="contactTel" placeholder="Téléphone" required>
+                <label>Email <span class="text-danger">*</span></label>
+                <input type="email" id="contactEmail" placeholder="Email" required>
+                <label>Objet</label>
+                <input type="text" id="contactObjet" placeholder="Objet">
+                <label>Votre message</label>
+                <textarea id="contactMessage" placeholder="Votre message"></textarea>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
- 
+
         </div>
- 
+
         <div class="map">
             <iframe
                 src="https://www.google.com/maps?q=dakar&output=embed"
@@ -205,10 +269,9 @@
             </iframe>
         </div>
     </section>
- 
-    <!-- =====================================================
-         SECTION GESTION RH (Employés)
-    ===================================================== -->
+
+
+    <!-- =============== SECTION GESTION RH (Employés) ============ -->
     <section id="gestion-rh" class="container mt-5">
         <div class="card shadow border-0">
             <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
@@ -247,38 +310,37 @@
             </div>
         </div>
     </section>
- 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
+
+
+    <!-- ============== FOOTER ============= -->
     <footer class="footer">
         <div class="footer-container">
- 
+
             <div class="footer-section">
                 <h2 class="footer-logo">Le Bonheur</h2>
                 <p>Restaurant de spécialités africaines offrant une expérience culinaire unique.</p>
             </div>
- 
+
             <div class="footer-section">
                 <h3>Liens utiles</h3>
                 <ul>
-                    <li><a href="#home">ACCUEIL</a></li>
-                    <li><a href="#menu">NOTRE MENU</a></li>
-                    <li><a href="#offres">OFFRES SPECIALES</a></li>
-                    <li><a href="#reservation">RESERVATION</a></li>
-                    <li><a href="#galerie">GALERIE</a></li>
-                    <li><a href="#temoignages">TEMOIGNAGES</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#home"><i class="fa-solid fa-house"></i> ACCUEIL</a></li>
+                    <li><a href="#menu"><i class="fa-solid fa-utensils"></i> NOTRE MENU</a></li>
+                    <li><a href="#offres"><i class="fa-solid fa-tag"></i> OFFRES SPECIALES</a></li>
+                    <li><a href="#reservation"><i class="fa-solid fa-calendar-check"></i> RESERVATION</a></li>
+                    <li><a href="#galerie"><i class="fa-solid fa-images"></i> GALERIE</a></li>
+                    <li><a href="#temoignages"><i class="fa-solid fa-star"></i> TEMOIGNAGES</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
                 </ul>
             </div>
- 
+
             <div class="footer-section">
                 <h3>Horaires</h3>
                 <p>Lundi - Vendredi : 10h - 22h</p>
                 <p>Samedi : 12h - 23h</p>
                 <p>Dimanche : 12h - 21h</p>
             </div>
- 
+
             <div class="footer-section">
                 <h3>Suivez-nous</h3>
                 <div class="social-icons">
@@ -288,96 +350,144 @@
                     <a href="https://wa.me/c/216264505036908"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
- 
+
         </div>
         <div class="footer-bottom">
             <p>© 2026 Le Bonheur | Mentions légales | Politique de confidentialité</p>
         </div>
     </footer>
- 
-    <!-- =====================================================
-         BOUTON WHATSAPP FLOTTANT
-    ===================================================== -->
+
+
+    <!-- =================== BOUTON WHATSAPP FLOTTANT ================ -->
     <a href="https://wa.me/221770000000" class="whatsapp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
- 
-    <!-- =====================================================
-         POPUP — BOISSONS & DESSERTS
-    ===================================================== -->
+
+
+    <!-- =============== POPUP — BOISSONS & DESSERTS ============== -->
     <div class="popup" id="popup">
         <div class="popup-content large-popup">
             <span class="close" onclick="closePopup()">&times;</span>
             <h2>Boissons & Desserts</h2>
- 
+
             <div class="drink-item">
                 <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d" alt="Mojito">
                 <div><h4>Mojito</h4><p>2000 FCFA</p></div>
             </div>
- 
+
             <div class="drink-item">
                 <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40" alt="Smoothie Ananas">
                 <div><h4>Smoothie Ananas</h4><p>2000 FCFA</p></div>
             </div>
- 
+
             <div class="drink-item">
                 <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Tiramisu">
                 <div><h4>Tiramisu</h4><p>2000 FCFA</p></div>
             </div>
- 
+
             <div class="drink-item">
                 <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c" alt="Mousse au chocolat">
                 <div><h4>Mousse au chocolat</h4><p>2000 FCFA</p></div>
             </div>
         </div>
     </div>
- 
-    <!-- =====================================================
-         POPUP — RÉSERVATION
-    ===================================================== -->
+
+
+    <!-- ================= POPUP — RÉSERVATION ============== -->
     <div class="popup" id="reservationPopup">
         <div class="popup-content large-popup">
             <span class="close" onclick="closeReservation()">&times;</span>
             <h2>Réserver une table</h2>
             <form class="form-reservation">
-                <input type="text" placeholder="Nom et prénom" required>
-                <input type="datetime-local" required>
-                <input type="number" placeholder="Nombre de personnes" required>
-                <input type="tel" placeholder="Téléphone" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Commentaires ou demandes spéciales"></textarea>
+
+                <!-- Nom complet -->
+                <div class="mb-1">
+                    <label for="name" class="form-label">
+                        Nom complet <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="name" required>
+                    <div class="invalid-feedback">
+                        Ce champ est obligatoire.
+                    </div>
+                </div>
+
+                <!-- Heure & Date -->
+                <div class="mb-1">
+                    <label for="datetime-local" class="form-label">
+                        Heure & Date <span class="text-danger">*</span>
+                    </label>
+                    <input type="datetime-local" class="form-control" id="datetime-local" required>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-1">
+                    <label for="email" class="form-label">
+                        Email <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" class="form-control" id="email" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un email valide.
+                    </div>
+                </div>
+
+                <!-- Nombre de personne -->
+                <div class="mb-1">
+                    <label for="number" class="form-label">
+                        Nombre de personne <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" class="form-control" id="number" min="1" value="1" max="6">
+                    <div class="invalid-feedback">
+                        Veuillez entrer le nombre de commande.
+                    </div>
+                </div>
+
+                <!-- Téléphone -->
+                <div class="mb-1">
+                    <label for="tel" class="form-label">
+                        Téléphone <span class="text-danger">*</span>
+                    </label>
+                    <input type="tel" class="form-control" id="tel" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un numéro de Téléphone valide.
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
         </div>
     </div>
- 
-    <!-- =====================================================
-         POPUP — COMMANDE
-    ===================================================== -->
+
+
+    <!-- ============== POPUP — COMMANDE ============== -->
     <div class="popup" id="commandePopup">
         <div class="popup-content large-popup">
             <span class="close" onclick="closeCommande()">&times;</span>
             <h2>Passer une commande</h2>
-            <form class="form-reservation">
-                <input type="text" placeholder="Nom et prénom" required>
-                <input type="tel" placeholder="Téléphone" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Votre commande"></textarea>
+            <form class="form-reservation" id="formCommande">
+                <label>Nom et prénom <span class="text-danger">*</span></label>
+                <input type="text" id="commandeNom" placeholder="Nom et prénom" required>
+                <label>Téléphone <span class="text-danger">*</span></label>
+                <input type="tel" id="commandeTel" placeholder="Téléphone" required>
+                <label>Email <span class="text-danger">*</span></label>
+                <input type="email" id="commandeEmail" placeholder="Email" required>
+                <label>Votre commande</label>
+                <textarea id="commandeDetail" placeholder="Votre commande"></textarea>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
         </div>
     </div>
- 
-    <!-- =====================================================
-         MODAL BOOTSTRAP — AJOUT EMPLOYÉ
-    ===================================================== -->
+
+
+    <!-- ============== MODAL BOOTSTRAP — AJOUT EMPLOYÉ ============== -->
     <div class="modal fade" id="modalEmploye" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+
                 <div class="modal-header">
                     <h5 class="modal-title">Ajouter un collaborateur</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
+
                 <div class="modal-body">
                     <form id="formAjout">
                         <div class="mb-3">
@@ -393,31 +503,301 @@
                         <div class="mb-3">
                             <label class="form-label">Département <span class="text-danger">*</span></label>
                             <select class="form-select" id="inputService">
-                                <option value="">Choisir un service...</option>
-                                <option value="Cuisine">Cuisine</option>
-                                <option value="Service en salle">Service en salle</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Finances">Finances</option>
+                                <option value="">Choisir un service...</option></option>
+                                <option value="Cuisine">Cuisine </option></option>
+                                <option value="Service en salle">Service en salle </option></option>
+                                <option value="Marketing">Marketing </option></option>
+                                <option value="Finances">Finances </option></option>
                             </select>
                             <div class="text-danger small d-none" id="errService">Veuillez choisir un service.</div>
                         </div>
                     </form>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
                     <button type="button" class="btn btn-success" onclick="validerFormulaire()">Enregistrer</button>
                 </div>
+
             </div>
         </div>
     </div>
- 
-    <!-- =====================================================
-         SCRIPTS (en bas de page pour meilleures performances)
-    ===================================================== -->
+
+
+    <!-- ================ MODAL BOOTSTRAP — COMMANDE (orderModal) =============== -->
+    <div class="modal fade" id="orderModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- HEADER -->
+                <div class="modal-header">
+                    <h5 class="modal-title">🛒 Passer une commande</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- BODY -->
+                <div class="modal-body">
+                    <form id="orderForm">
+
+                        <div class="mb-3">
+                            <label>Nom <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Téléphone <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Adresse de livraison <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Message</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Confirmer la commande
+                        </button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =============== SCRIPTS ============ -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Script principal -->
     <script src="script.js"></script>
- 
+
+    <script>
+    // =============
+    // UTILITAIRE localStorage
+    // ============
+    function sauvegarder(cle, donnees) {
+        const liste = JSON.parse(localStorage.getItem(cle) || "[]");
+        liste.push({ ...donnees, date_enregistrement: new Date().toLocaleString() });
+        localStorage.setItem(cle, JSON.stringify(liste));
+    }
+
+    // ================
+    // 1. FORMULAIRE RÉSERVATION (section principale)
+    // =================
+    const formReservationSection = document.querySelector("#reservation form");
+    if (formReservationSection) {
+        formReservationSection.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const donnees = {
+                nom:      document.getElementById("name").value,
+                tel:      document.getElementById("tel").value,
+                email:    document.getElementById("mail").value,
+                date:     document.getElementById("date").value,
+                heure:    document.getElementById("time").value,
+                personnes: document.getElementById("number").value,
+                message:  document.getElementById("message").value
+            };
+            sauvegarder("reservations", donnees);
+            alert("✅ Réservation enregistrée avec succès !");
+            formReservationSection.reset();
+        });
+    }
+
+    // =============
+    // 2. FORMULAIRE CONTACT
+    // ===========
+    const formContact = document.getElementById("formContact");
+    if (formContact) {
+        formContact.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const donnees = {
+                nom:     document.getElementById("contactNom").value,
+                tel:     document.getElementById("contactTel").value,
+                email:   document.getElementById("contactEmail").value,
+                objet:   document.getElementById("contactObjet").value,
+                message: document.getElementById("contactMessage").value
+            };
+            sauvegarder("messages_contact", donnees);
+            alert("✅ Message envoyé et enregistré !");
+            formContact.reset();
+        });
+    }
+
+    // ==============
+    // 3. POPUP RÉSERVATION
+    // ==============
+    const formPopupReservation = document.querySelector("#reservationPopup form");
+    if (formPopupReservation) {
+        formPopupReservation.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const donnees = {
+                nom:      document.getElementById("name").value,
+                datetime: document.getElementById("datetime-local").value,
+                email:    document.getElementById("email").value,
+                personnes: document.getElementById("number").value,
+                tel:      document.getElementById("tel").value
+            };
+            sauvegarder("reservations", donnees);
+            alert("✅ Réservation enregistrée avec succès !");
+            formPopupReservation.reset();
+            closeReservation();
+        });
+    }
+
+    // ===================
+    // 4. POPUP COMMANDE
+    // ==================
+    const formCommande = document.getElementById("formCommande");
+    if (formCommande) {
+        formCommande.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const donnees = {
+                nom:     document.getElementById("commandeNom").value,
+                tel:     document.getElementById("commandeTel").value,
+                email:   document.getElementById("commandeEmail").value,
+                detail:  document.getElementById("commandeDetail").value
+            };
+            sauvegarder("commandes", donnees);
+            alert("✅ Commande enregistrée avec succès !");
+            formCommande.reset();
+            closeCommande();
+        });
+    }
+
+    // =============
+    // 5. MODAL COMMANDE (orderForm — offres spéciales)
+    // =============
+    const orderForm = document.getElementById("orderForm");
+    if (orderForm) {
+        orderForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const inputs = orderForm.querySelectorAll("input, textarea");
+            const donnees = {
+                nom:      inputs[0].value,
+                tel:      inputs[1].value,
+                adresse:  inputs[2].value,
+                message:  inputs[3].value
+            };
+            sauvegarder("commandes", donnees);
+            alert("✅ Commande envoyée avec succès 🍔");
+            orderForm.reset();
+        });
+    }
+
+    // ==============
+    // 6. GESTION EMPLOYÉS — déjà géré par validerFormulaire()
+    //    On surcharge ici pour sauvegarder dans localStorage
+    // ===================
+    function validerFormulaire() {
+        const prenom  = document.getElementById("inputPrenom");
+        const nom     = document.getElementById("inputNom");
+        const service = document.getElementById("inputService");
+
+        const errPrenom  = document.getElementById("errPrenom");
+        const errNom     = document.getElementById("errNom");
+        const errService = document.getElementById("errService");
+
+        let valide = true;
+
+        errPrenom.classList.add("d-none");
+        errNom.classList.add("d-none");
+        errService.classList.add("d-none");
+
+        if (!prenom.value.trim())  { errPrenom.classList.remove("d-none");  valide = false; }
+        if (!nom.value.trim())     { errNom.classList.remove("d-none");     valide = false; }
+        if (!service.value)        { errService.classList.remove("d-none"); valide = false; }
+
+        if (!valide) return;
+
+        // Générer matricule
+        const employes = JSON.parse(localStorage.getItem("employes") || "[]");
+        const numero   = String(employes.length + 1).padStart(3, "0");
+        const matricule = "EMP-2026-" + numero;
+
+        const nouvelEmploye = {
+            matricule: matricule,
+            prenom:    prenom.value.trim(),
+            nom:       nom.value.trim(),
+            service:   service.value
+        };
+
+        // Sauvegarder dans localStorage
+        employes.push(nouvelEmploye);
+        localStorage.setItem("employes", JSON.stringify(employes));
+
+        // Ajouter la ligne dans le tableau
+        const tbody = document.getElementById("employeeTableBody");
+        const ligne = document.createElement("tr");
+        ligne.innerHTML = `
+            <td>${nouvelEmploye.matricule}</td>
+            <td>${nouvelEmploye.prenom}</td>
+            <td>${nouvelEmploye.nom}</td>
+            <td>${nouvelEmploye.service}</td>
+            <td>
+                <button class="btn btn-outline-danger btn-sm" onclick="supprimerEmploye(this)">
+                    <i class="fas fa-trash"></i> Supprimer
+                </button>
+            </td>
+        `;
+        tbody.appendChild(ligne);
+
+        // Fermer le modal et réinitialiser
+        const modal = bootstrap.Modal.getInstance(document.getElementById("modalEmploye"));
+        if (modal) modal.hide();
+        document.getElementById("formAjout").reset();
+
+        alert("✅ Employé ajouté et enregistré !");
+    }
+
+    // ================
+    // SUPPRESSION EMPLOYÉ — mise à jour localStorage
+    // ==============
+    function supprimerEmploye(btn) {
+        const ligne = btn.closest("tr");
+        const prenom    = ligne.cells[1].textContent.trim();
+        const nom       = ligne.cells[2].textContent.trim();
+        const matricule = ligne.cells[0].textContent.trim();
+
+        const confirmation = confirm(`⚠️ Êtes-vous sûr de vouloir supprimer l'employé ${prenom} ${nom} (${matricule}) ?\n\nCette action est irréversible.`);
+        if (!confirmation) return;
+
+        let employes = JSON.parse(localStorage.getItem("employes") || "[]");
+        employes = employes.filter(e => e.matricule !== matricule);
+        localStorage.setItem("employes", JSON.stringify(employes));
+
+        ligne.remove();
+        alert(`✅ L'employé ${prenom} ${nom} a bien été supprimé.`);
+    }
+
+    // =================
+    // CHARGEMENT — restaurer les employés au démarrage
+    // ================
+    document.addEventListener("DOMContentLoaded", function () {
+        const employes = JSON.parse(localStorage.getItem("employes") || "[]");
+        const tbody = document.getElementById("employeeTableBody");
+        employes.forEach(function (e) {
+            const ligne = document.createElement("tr");
+            ligne.innerHTML = `
+                <td>${e.matricule}</td>
+                <td>${e.prenom}</td>
+                <td>${e.nom}</td>
+                <td>${e.service}</td>
+                <td>
+                    <button class="btn btn-outline-danger btn-sm" onclick="supprimerEmploye(this)">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(ligne);
+        });
+    });
+    </script>
+
 </body>
 </html>
