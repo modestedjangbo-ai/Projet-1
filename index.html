@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<!-- ============================================================
+     HEAD
+     ============================================================ -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +16,15 @@
     <!-- Feuille de style principale -->
     <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- ============================================================
+     BODY
+     ============================================================ -->
 <body>
 
-    <!-- ========== NAVIGATION ============= -->
+    <!-- ====================================================
+         NAVIGATION
+         ==================================================== -->
     <nav class="navbar">
         <div class="logo">Le Bonheur</div>
         <ul class="nav-links">
@@ -25,11 +35,14 @@
             <li><a href="#galerie"><i class="fa-solid fa-images"></i> GALERIE</a></li>
             <li><a href="#temoignages"><i class="fa-solid fa-star"></i> TEMOIGNAGES</a></li>
             <li><a href="#contact"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
+            <li><a href="#gestion-rh"><i class="fa-solid fa-users"></i> GESTION RH</a></li>
         </ul>
     </nav>
 
 
-    <!-- ================= HERO / HEADER ================= -->
+    <!-- ====================================================
+         HERO / HEADER
+         ==================================================== -->
     <header class="hero" id="home">
         <div class="hero-content">
             <h1>Le Royaume des Saveurs locaux</h1>
@@ -43,7 +56,9 @@
     </header>
 
 
-    <!-- ============= SECTION MENU ============ -->
+    <!-- ====================================================
+         SECTION MENU
+         ==================================================== -->
     <section class="menu-section" id="menu">
         <h2>Nos Plats Phares</h2>
         <div class="menu-container">
@@ -74,7 +89,9 @@
     </section>
 
 
-    <!-- ========== SECTION OFFRES SPÉCIAL ============= -->
+    <!-- ====================================================
+         SECTION OFFRES SPÉCIALES
+         ==================================================== -->
     <section id="offres">
         <section class="container my-5">
             <h2 class="text-center mb-4">🔥 Offres spéciales</h2>
@@ -143,7 +160,9 @@
     </section>
 
 
-    <!-- =============== SECTION RÉSERVATION ============= -->
+    <!-- ====================================================
+         SECTION RÉSERVATION
+         ==================================================== -->
     <section id="reservation">
         <h2>Réservation</h2>
         <div class="center">
@@ -184,7 +203,9 @@
     </section>
 
 
-    <!-- ============== SECTION GALERIE =========== -->
+    <!-- ====================================================
+         SECTION GALERIE
+         ==================================================== -->
     <section class="gallery" id="galerie">
         <h2>Notre Galerie</h2>
         <div class="gallery-container">
@@ -198,7 +219,9 @@
     </section>
 
 
-    <!-- ============= SECTION TÉMOIGNAGES ============= -->
+    <!-- ====================================================
+         SECTION TÉMOIGNAGES
+         ==================================================== -->
     <section class="temoignages" id="temoignages">
         <h2>Ce que disent nos clients</h2>
         <div class="temoignage-container">
@@ -225,37 +248,50 @@
     </section>
 
 
-    <!-- ===========  SECTION CONTACT =========== -->
+    <!-- ====================================================
+         SECTION CONTACT
+         ==================================================== -->
     <section class="contact" id="contact">
         <h2>Contactez-nous</h2>
+
+        <!-- Infos de contact en haut -->
+        <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> Dakar, Sénégal</p>
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+221770000000">+221 77 000 00 00</a>
+            </p>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:restaurantbonheur@gmail.com">restaurantbonheur@gmail.com</a>
+            </p>
+        </div>
+
+        <!-- Formulaire en dessous -->
         <div class="contact-container">
-
-            <div class="contact-info">
-                <p><i class="fa-solid fa-location-dot"></i> Dakar, Sénégal</p>
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:+221770000000">+221 77 000 00 00</a>
-                </p>
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:restaurantbonheur@gmail.com">restaurantbonheur@gmail.com</a>
-                </p>
-            </div>
-
             <form class="contact-form" id="formContact">
-                <label>Prénom et Nom <span class="text-danger">*</span></label>
-                <input type="text" id="contactNom" placeholder="Prénom et Nom" required>
-                <label>Téléphone <span class="text-danger">*</span></label>
-                <input type="tel" id="contactTel" placeholder="Téléphone" required>
-                <label>Email <span class="text-danger">*</span></label>
-                <input type="email" id="contactEmail" placeholder="Email" required>
-                <label>Objet</label>
-                <input type="text" id="contactObjet" placeholder="Objet">
-                <label>Votre message</label>
-                <textarea id="contactMessage" placeholder="Votre message"></textarea>
+                <div class="contact-field">
+                    <label>Prénom et Nom <span class="text-danger">*</span></label>
+                    <input type="text" id="contactNom" placeholder="Prénom et Nom" required>
+                </div>
+                <div class="contact-field">
+                    <label>Téléphone <span class="text-danger">*</span></label>
+                    <input type="tel" id="contactTel" placeholder="Téléphone" required>
+                </div>
+                <div class="contact-field">
+                    <label>Email <span class="text-danger">*</span></label>
+                    <input type="email" id="contactEmail" placeholder="Email" required>
+                </div>
+                <div class="contact-field">
+                    <label>Objet</label>
+                    <input type="text" id="contactObjet" placeholder="Objet">
+                </div>
+                <div class="contact-field">
+                    <label>Votre message</label>
+                    <textarea id="contactMessage" placeholder="Votre message"></textarea>
+                </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
-
         </div>
 
         <div class="map">
@@ -271,7 +307,9 @@
     </section>
 
 
-    <!-- =============== SECTION GESTION RH (Employés) ============ -->
+    <!-- ====================================================
+         SECTION GESTION RH (Employés)
+         ==================================================== -->
     <section id="gestion-rh" class="container mt-5">
         <div class="card shadow border-0">
             <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
@@ -312,7 +350,9 @@
     </section>
 
 
-    <!-- ============== FOOTER ============= -->
+    <!-- ====================================================
+         FOOTER
+         ==================================================== -->
     <footer class="footer">
         <div class="footer-container">
 
@@ -331,6 +371,7 @@
                     <li><a href="#galerie"><i class="fa-solid fa-images"></i> GALERIE</a></li>
                     <li><a href="#temoignages"><i class="fa-solid fa-star"></i> TEMOIGNAGES</a></li>
                     <li><a href="#contact"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
+                    <li><a href="#gestion-rh"><i class="fa-solid fa-users"></i> GESTION RH</a></li>
                 </ul>
             </div>
 
@@ -358,13 +399,17 @@
     </footer>
 
 
-    <!-- =================== BOUTON WHATSAPP FLOTTANT ================ -->
+    <!-- ====================================================
+         BOUTON WHATSAPP FLOTTANT
+         ==================================================== -->
     <a href="https://wa.me/221770000000" class="whatsapp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
 
-    <!-- =============== POPUP — BOISSONS & DESSERTS ============== -->
+    <!-- ====================================================
+         POPUP — BOISSONS & DESSERTS
+         ==================================================== -->
     <div class="popup" id="popup">
         <div class="popup-content large-popup">
             <span class="close" onclick="closePopup()">&times;</span>
@@ -393,7 +438,9 @@
     </div>
 
 
-    <!-- ================= POPUP — RÉSERVATION ============== -->
+    <!-- ====================================================
+         POPUP — RÉSERVATION
+         ==================================================== -->
     <div class="popup" id="reservationPopup">
         <div class="popup-content large-popup">
             <span class="close" onclick="closeReservation()">&times;</span>
@@ -458,27 +505,39 @@
     </div>
 
 
-    <!-- ============== POPUP — COMMANDE ============== -->
+    <!-- ====================================================
+         POPUP — COMMANDE
+         ==================================================== -->
     <div class="popup" id="commandePopup">
         <div class="popup-content large-popup">
             <span class="close" onclick="closeCommande()">&times;</span>
             <h2>Passer une commande</h2>
             <form class="form-reservation" id="formCommande">
-                <label>Nom et prénom <span class="text-danger">*</span></label>
-                <input type="text" id="commandeNom" placeholder="Nom et prénom" required>
-                <label>Téléphone <span class="text-danger">*</span></label>
-                <input type="tel" id="commandeTel" placeholder="Téléphone" required>
-                <label>Email <span class="text-danger">*</span></label>
-                <input type="email" id="commandeEmail" placeholder="Email" required>
-                <label>Votre commande</label>
-                <textarea id="commandeDetail" placeholder="Votre commande"></textarea>
+                <div class="contact-field">
+                    <label>Nom et prénom <span class="text-danger">*</span></label>
+                    <input type="text" id="commandeNom" placeholder="Nom et prénom" required>
+                </div>
+                <div class="contact-field">
+                    <label>Téléphone <span class="text-danger">*</span></label>
+                    <input type="tel" id="commandeTel" placeholder="Téléphone" required>
+                </div>
+                <div class="contact-field">
+                    <label>Email <span class="text-danger">*</span></label>
+                    <input type="email" id="commandeEmail" placeholder="Email" required>
+                </div>
+                <div class="contact-field">
+                    <label>Votre commande</label>
+                    <textarea id="commandeDetail" placeholder="Votre commande"></textarea>
+                </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
         </div>
     </div>
 
 
-    <!-- ============== MODAL BOOTSTRAP — AJOUT EMPLOYÉ ============== -->
+    <!-- ====================================================
+         MODAL BOOTSTRAP — AJOUT EMPLOYÉ
+         ==================================================== -->
     <div class="modal fade" id="modalEmploye" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -524,7 +583,9 @@
     </div>
 
 
-    <!-- ================ MODAL BOOTSTRAP — COMMANDE (orderModal) =============== -->
+    <!-- ====================================================
+         MODAL BOOTSTRAP — COMMANDE (orderModal)
+         ==================================================== -->
     <div class="modal fade" id="orderModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -571,25 +632,27 @@
     </div>
 
 
-    <!-- =============== SCRIPTS ============ -->
+    <!-- ====================================================
+         SCRIPTS
+         ==================================================== -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Script principal -->
     <script src="script.js"></script>
 
     <script>
-    // =============
+    // ============================================================
     // UTILITAIRE localStorage
-    // ============
+    // ============================================================
     function sauvegarder(cle, donnees) {
         const liste = JSON.parse(localStorage.getItem(cle) || "[]");
         liste.push({ ...donnees, date_enregistrement: new Date().toLocaleString() });
         localStorage.setItem(cle, JSON.stringify(liste));
     }
 
-    // ================
+    // ============================================================
     // 1. FORMULAIRE RÉSERVATION (section principale)
-    // =================
+    // ============================================================
     const formReservationSection = document.querySelector("#reservation form");
     if (formReservationSection) {
         formReservationSection.addEventListener("submit", function (e) {
@@ -609,9 +672,9 @@
         });
     }
 
-    // =============
+    // ============================================================
     // 2. FORMULAIRE CONTACT
-    // ===========
+    // ============================================================
     const formContact = document.getElementById("formContact");
     if (formContact) {
         formContact.addEventListener("submit", function (e) {
@@ -629,9 +692,9 @@
         });
     }
 
-    // ==============
+    // ============================================================
     // 3. POPUP RÉSERVATION
-    // ==============
+    // ============================================================
     const formPopupReservation = document.querySelector("#reservationPopup form");
     if (formPopupReservation) {
         formPopupReservation.addEventListener("submit", function (e) {
@@ -650,9 +713,9 @@
         });
     }
 
-    // ===================
+    // ============================================================
     // 4. POPUP COMMANDE
-    // ==================
+    // ============================================================
     const formCommande = document.getElementById("formCommande");
     if (formCommande) {
         formCommande.addEventListener("submit", function (e) {
@@ -670,9 +733,9 @@
         });
     }
 
-    // =============
+    // ============================================================
     // 5. MODAL COMMANDE (orderForm — offres spéciales)
-    // =============
+    // ============================================================
     const orderForm = document.getElementById("orderForm");
     if (orderForm) {
         orderForm.addEventListener("submit", function (e) {
@@ -690,10 +753,10 @@
         });
     }
 
-    // ==============
+    // ============================================================
     // 6. GESTION EMPLOYÉS — déjà géré par validerFormulaire()
     //    On surcharge ici pour sauvegarder dans localStorage
-    // ===================
+    // ============================================================
     function validerFormulaire() {
         const prenom  = document.getElementById("inputPrenom");
         const nom     = document.getElementById("inputNom");
@@ -729,23 +792,27 @@
 
         // Sauvegarder dans localStorage
         employes.push(nouvelEmploye);
+        employes.sort((a, b) => a.nom.localeCompare(b.nom) || a.prenom.localeCompare(b.prenom));
         localStorage.setItem("employes", JSON.stringify(employes));
 
-        // Ajouter la ligne dans le tableau
+        // Reconstruire tout le tableau dans l'ordre
         const tbody = document.getElementById("employeeTableBody");
-        const ligne = document.createElement("tr");
-        ligne.innerHTML = `
-            <td>${nouvelEmploye.matricule}</td>
-            <td>${nouvelEmploye.prenom}</td>
-            <td>${nouvelEmploye.nom}</td>
-            <td>${nouvelEmploye.service}</td>
-            <td>
-                <button class="btn btn-outline-danger btn-sm" onclick="supprimerEmploye(this)">
-                    <i class="fas fa-trash"></i> Supprimer
-                </button>
-            </td>
-        `;
-        tbody.appendChild(ligne);
+        tbody.innerHTML = "";
+        employes.forEach(function (e) {
+            const ligne = document.createElement("tr");
+            ligne.innerHTML = `
+                <td>${e.matricule}</td>
+                <td>${e.prenom}</td>
+                <td>${e.nom}</td>
+                <td>${e.service}</td>
+                <td>
+                    <button class="btn btn-outline-danger btn-sm" onclick="supprimerEmploye(this)">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(ligne);
+        });
 
         // Fermer le modal et réinitialiser
         const modal = bootstrap.Modal.getInstance(document.getElementById("modalEmploye"));
@@ -755,9 +822,9 @@
         alert("✅ Employé ajouté et enregistré !");
     }
 
-    // ================
+    // ============================================================
     // SUPPRESSION EMPLOYÉ — mise à jour localStorage
-    // ==============
+    // ============================================================
     function supprimerEmploye(btn) {
         const ligne = btn.closest("tr");
         const prenom    = ligne.cells[1].textContent.trim();
@@ -775,11 +842,12 @@
         alert(`✅ L'employé ${prenom} ${nom} a bien été supprimé.`);
     }
 
-    // =================
+    // ============================================================
     // CHARGEMENT — restaurer les employés au démarrage
-    // ================
+    // ============================================================
     document.addEventListener("DOMContentLoaded", function () {
         const employes = JSON.parse(localStorage.getItem("employes") || "[]");
+        employes.sort((a, b) => a.nom.localeCompare(b.nom) || a.prenom.localeCompare(b.prenom));
         const tbody = document.getElementById("employeeTableBody");
         employes.forEach(function (e) {
             const ligne = document.createElement("tr");

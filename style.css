@@ -254,6 +254,27 @@
     flex-direction:column;
     gap:10px;
 }
+
+/* Chaque ligne label + champ dans les popups */
+.form-reservation .contact-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-reservation .contact-field label {
+    width: 160px;
+    min-width: 140px;
+    flex-shrink: 0;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0 !important;
+}
+
+.form-reservation .contact-field input,
+.form-reservation .contact-field textarea {
+    flex: 1;
+}
  
 .form-reservation input,
 .form-reservation textarea{
@@ -485,16 +506,18 @@ input[type="submit"]:hover {
     padding:80px 5%;
     text-align:center;
 }
- 
-.contact-container{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    margin-top:40px;
+
+/* Infos de contact centrées en haut */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
- 
+
 .contact-info p{
-    margin:15px 0;
+    margin: 0;
     font-size:1rem;
 }
  
@@ -502,15 +525,39 @@ input[type="submit"]:hover {
     text-decoration:none;
     color:#333;
 }
- 
+
+/* Formulaire en dessous, centré */
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
 .contact-form{
     display:flex;
     flex-direction:column;
     gap:10px;
 }
- 
-.contact-form input,
-.contact-form textarea{
+
+/* Chaque ligne label + champ */
+.contact-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-field label {
+    width: 160px;
+    min-width: 140px;
+    flex-shrink: 0;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0 !important;
+}
+
+.contact-field input,
+.contact-field textarea {
+    flex: 1;
     padding:10px;
     border-radius:5px;
     border:1px solid #ccc;
@@ -518,12 +565,36 @@ input[type="submit"]:hover {
  
 .contact-form textarea{
     height:100px;
+    resize: vertical;
 }
  
 .map{
     margin-top:40px;
     border-radius:10px;
     overflow:hidden;
+}
+
+/* Responsive contact */
+@media (max-width: 600px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .contact-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-field label {
+        width: 100%;
+    }
+
+    .contact-field input,
+    .contact-field textarea {
+        width: 100%;
+    }
 }
  
 /* FOOTER */
@@ -725,4 +796,93 @@ input[type="submit"]:hover {
     height: 3px;
     background: #ff6b6b;
     border-radius: 2px;
+}
+
+/* ============================================================
+   LABELS DEVANT LES CHAMPS — tous les formulaires
+   ============================================================ */
+
+/* Chaque groupe label + champ sur la même ligne */
+.mb-1,
+.mb-3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+label,
+.form-label {
+    display: inline-block !important;
+    width: 180px !important;
+    min-width: 150px !important;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+    margin-bottom: 0 !important;
+    flex-shrink: 0;
+}
+
+/* Les champs prennent le reste */
+.mb-1 input,
+.mb-1 textarea,
+.mb-1 select,
+.mb-3 input,
+.mb-3 textarea,
+.mb-3 select,
+label + input,
+label + textarea,
+label + select,
+.form-label + input,
+.form-label + textarea,
+.form-label + select {
+    display: inline-block !important;
+    width: calc(100% - 200px) !important;
+    flex: 1;
+}
+
+/* Messages d'erreur Bootstrap en dessous du champ */
+.invalid-feedback,
+.text-danger.small {
+    width: 100%;
+    padding-left: 190px;
+}
+
+/* Correction pour Bootstrap : annuler le text-center sur les labels */
+.card-body.text-center label,
+.card-body.text-center .form-label {
+    text-align: left !important;
+}
+
+/* Responsive : sur mobile les labels passent au-dessus */
+@media (max-width: 600px) {
+    .mb-1,
+    .mb-3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label,
+    .form-label {
+        width: 100% !important;
+        min-width: unset !important;
+        margin-bottom: 4px !important;
+    }
+
+    .mb-1 input,
+    .mb-1 textarea,
+    .mb-1 select,
+    .mb-3 input,
+    .mb-3 textarea,
+    .mb-3 select,
+    label + input,
+    label + textarea,
+    label + select {
+        width: 100% !important;
+    }
+
+    .invalid-feedback,
+    .text-danger.small {
+        padding-left: 0;
+    }
 }
