@@ -9,10 +9,7 @@
    - Gestion des employés (ajout / suppression)
    ========================================================= */
  
-/* ---------------------------------------------------------
-   1. UTILITAIRE : TOAST NOTIFICATIONS
-   Remplace les alert() natifs par des toasts élégants
---------------------------------------------------------- */
+/* 1. UTILITAIRE : TOAST NOTIFICATIONS Remplace les alert() natifs par des toasts élégants */
 function showToast(message, type = 'success') {
     let container = document.getElementById('toast-container');
     if (!container) {
@@ -38,9 +35,7 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
  
-/* ---------------------------------------------------------
-   2. POPUPS — Ouverture & Fermeture
---------------------------------------------------------- */
+/*  2. POPUPS — Ouverture & Fermeture */
 function openPopup() {
     document.getElementById('popup').style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -94,9 +89,7 @@ document.addEventListener('keydown', function (e) {
     }
 });
  
-/* ---------------------------------------------------------
-   3. NAVBAR — Changement de style au scroll
---------------------------------------------------------- */
+/* 3. NAVBAR — Changement de style au scroll */
 window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
@@ -110,10 +103,7 @@ window.addEventListener('scroll', function () {
     highlightActiveNav();
 });
  
-/* ---------------------------------------------------------
-   4. NAVIGATION ACTIVE — Met en surbrillance le lien
-      correspondant à la section visible
---------------------------------------------------------- */
+/* 4. NAVIGATION ACTIVE — Met en surbrillance le lien correspondant à la section visible */
 function highlightActiveNav() {
     const sections = document.querySelectorAll('section[id], header[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -134,9 +124,7 @@ function highlightActiveNav() {
     });
 }
  
-/* ---------------------------------------------------------
-   5. SMOOTH SCROLL — Défilement doux vers les sections
---------------------------------------------------------- */
+/* 5. SMOOTH SCROLL — Défilement doux vers les sections */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -147,9 +135,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
  
-/* ---------------------------------------------------------
-   6. SCROLL REVEAL — Animation d'entrée des éléments
---------------------------------------------------------- */
+/* 6. SCROLL REVEAL — Animation d'entrée des éléments */
 function initScrollReveal() {
     const targets = document.querySelectorAll(
         '.menu-card, .temoignage-card, .gallery-container img, .contact-info, .contact-form, .drink-item'
@@ -172,7 +158,7 @@ function initScrollReveal() {
     targets.forEach(el => observer.observe(el));
 }
  
-/* ---------------------------------------------------------
+/* ------------------------------------
    7. GESTION DES EMPLOYÉS (RH)
    - Compteur de matricule automatique
    - Validation
@@ -270,9 +256,7 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
  
-/* ---------------------------------------------------------
-   8. FORMULAIRES POPUPS — Feedback soumission
---------------------------------------------------------- */
+/* 8. FORMULAIRES POPUPS — Feedback soumission */
 function initFormFeedback() {
     // Formulaire réservation popup
     const formRes = document.querySelector('#reservationPopup .form-reservation');
@@ -317,9 +301,7 @@ function initFormFeedback() {
     }
 }
  
-/* ---------------------------------------------------------
-   9. INITIALISATION — Lancement au chargement de la page
---------------------------------------------------------- */
+/* 9. INITIALISATION — Lancement au chargement de la page */
 document.addEventListener('DOMContentLoaded', function () {
     initScrollReveal();
     initFormFeedback();

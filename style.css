@@ -798,9 +798,7 @@ input[type="submit"]:hover {
     border-radius: 2px;
 }
 
-/* ============================================================
-   LABELS DEVANT LES CHAMPS — tous les formulaires
-   ============================================================ */
+/** LABELS DEVANT LES CHAMPS — tous les formulaires **/
 
 /* Chaque groupe label + champ sur la même ligne */
 .mb-1,
